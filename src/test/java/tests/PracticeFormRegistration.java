@@ -1,6 +1,9 @@
 package test.java.tests;
 
 
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import test.java.pages.RegistrationPage;
 import test.java.pages.SelectPage;
@@ -17,6 +20,9 @@ public class PracticeFormRegistration extends test.java.pages.components.TestBas
     test.java.pages.SelectPage selectPage = new SelectPage();
 
     @Test
+    @Tag("Registration")
+    @Owner("iStarzG")
+    @DisplayName("Заполнение формы регистрации с проверкой введеных данных")
     void succesfulRegistrationWithAllData() {
 
         registrationPage.openPage()
@@ -49,6 +55,9 @@ public class PracticeFormRegistration extends test.java.pages.components.TestBas
     }
 
     @Test
+    @Tag("MinimalInfoRegistration")
+    @Owner("iStarzG")
+    @DisplayName("Заполнение упращенной формы регистрации с проверкой минимальных данных")
     void RegistrationWithMinimalInformation() {
 
         registrationPage.openPage()
@@ -69,6 +78,9 @@ public class PracticeFormRegistration extends test.java.pages.components.TestBas
 
 
     @Test
+    @Tag("NegativeTest")
+    @Owner("iStarzG")
+    @DisplayName("Негативный тест заполнения формы с отсутствием данных")
     void RegistrationEmptyInformation() {
         registrationPage.openPage()
                 .submitButton()

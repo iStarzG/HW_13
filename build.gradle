@@ -30,10 +30,21 @@ dependencies {
     )
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+tasks.withType(Test) {
+    useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
 
-test {
-    useJUnitPlatform()
+task  registration_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("Registration")
+        includeTags("MinimalInfoRegistration")
+        includeTags("NegativeTest")
+    }
 }
