@@ -44,7 +44,5 @@ tasks.withType(Test) {
 task  registration_test(type: Test) {
     useJUnitPlatform {
         includeTags("Registration")
-        includeTags("MinimalInfoRegistration")
-        includeTags("NegativeTest")
     }
 }
