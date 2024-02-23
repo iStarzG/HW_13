@@ -102,7 +102,7 @@ public class RegistrationPage {
 
         return this;
     }
-    @Step("Загрузка картинки")
+    @Step("Загрузка картинки: 1.jpeg")
     public RegistrationPage uploadPicture(String... strings) {
         uploadPictureName.uploadFromClasspath("1.jpeg");
         return this;
@@ -129,7 +129,7 @@ public class RegistrationPage {
         return this;
     }
 
-    @Step("Проверка цвета")
+    @Step("Проверка красного цвета в незаполненных полях")
     public RegistrationPage colorCheck(String findColor, String color) {
         firstNameInput.shouldHave(cssValue(findColor, color));
         lastNameInput.shouldHave(cssValue(findColor, color));
@@ -139,7 +139,7 @@ public class RegistrationPage {
         genderWrapper.$("label[for='gender-radio-3']").shouldHave(cssValue(findColor, color));
         return this;
     }
-    @Step("Нажатие кнопки")
+    @Step("Нажатие кнопки submit")
     public RegistrationPage submitButton() {
         submitButton.click();
 

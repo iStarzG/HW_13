@@ -1,5 +1,8 @@
 package test.java.tests;
 
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import test.java.pages.TextBoxRegistrationPage;
 import test.java.pages.TextBoxSelectPage;
@@ -13,6 +16,9 @@ public class TextBoxTestWhithFaker extends test.java.pages.components.TestBase {
 
 
     @Test
+    @Tag("RegistrationTextBox")
+    @Owner("iStarzG")
+    @DisplayName("Заполнение формы регистрации с проверкой введеных данных")
     void textBoxWithPages() {
         textBoxPage.openPage()
                 .setFirstName(testRandomData.firstName)
