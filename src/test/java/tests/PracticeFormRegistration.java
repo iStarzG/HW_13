@@ -62,6 +62,7 @@ public class PracticeFormRegistration extends test.java.pages.components.TestBas
     void RegistrationWithMinimalInformation() {
 
         registrationPage.openPage()
+                .checkDialogModal()
                 .setFirstName(testRandomData.firstName)
                 .setLastName(testRandomData.lastName)
                 .setGender(testRandomData.inputGender)
