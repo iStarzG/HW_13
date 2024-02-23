@@ -26,6 +26,7 @@ public class PracticeFormRegistration extends test.java.pages.components.TestBas
     void succesfulRegistrationWithAllData() {
 
         registrationPage.openPage()
+                .checkDialogModal()
                 .setFirstName(testRandomData.firstName)
                 .setLastName(testRandomData.lastName)
                 .setEmail(testRandomData.inputEmail)

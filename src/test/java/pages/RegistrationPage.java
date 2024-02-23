@@ -24,7 +24,8 @@ public class RegistrationPage {
             stateInput = $("#state"),
             stateCityWrapper = $("#stateCity-wrapper"),
             cityInput = $("#city"),
-            submitButton = $("#submit");
+            submitButton = $("#submit"),
+            dialogClose = $(".fc-consent-root .fc-cta-consent");
 
 
     test.java.pages.components.InputCalendarComponent inputCalendarComponent = new InputCalendarComponent();
@@ -35,6 +36,20 @@ public class RegistrationPage {
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
 
+        return this;
+    }
+    @Step("Закрытие диалогового окна при его наличии ")
+    public RegistrationPage checkDialogModal() {
+        int counter = 0;
+        while (counter < 3) {
+
+            if (dialogClose.isDisplayed()) {
+                dialogClose.click();
+                break;
+            }
+            sleep(1000);
+            counter++;
+        }
         return this;
     }
 
