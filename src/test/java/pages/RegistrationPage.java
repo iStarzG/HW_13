@@ -104,7 +104,7 @@ public class RegistrationPage {
     }
     @Step("Загрузка картинки: 1.jpeg")
     public RegistrationPage uploadPicture(String... strings) {
-        uploadPictureName.uploadFromClasspath("1.jpeg");
+        uploadPictureName.uploadFromClasspath("img/1.jpeg");
         return this;
 
     }
